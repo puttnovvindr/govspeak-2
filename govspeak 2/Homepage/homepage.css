@@ -1,0 +1,760 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* header, navbar */
+.header{
+    width: auto;
+    height: auto;
+    background: linear-gradient(to bottom, #ee739e, #632E40);
+    padding: 40px 100px 80px 100px;
+}
+
+.header .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.header .navbar .logo{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 22px;
+}
+
+.header .navbar .menu{
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.header .navbar .menu a{
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+}
+
+.header .navbar .menu #a:not(button #a)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+    transform-origin: right;
+    transform: scaleX(0);
+}
+
+.header .navbar .menu #a:not(button #a):hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.header .navbar .menu .signup-button a{
+    padding: 10px 30px;
+    border-radius: 6px;
+    border: 0px solid;
+    font-weight: bold;
+    background-color: #763249;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.header .navbar .menu .signup-button:hover {
+    background-color: #632E40;
+    box-shadow: 0px 0px 50px rgba(238, 115, 158, 0.5);
+}
+
+/* tambahkan gaya khusus jika diperlukan */
+.modal {
+    display: none; /* Sembunyikan modal secara default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Limit maximum width */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content input[type=text], 
+.modal-content input[type=email], 
+.modal-content input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal-content button:hover {
+    opacity: 0.8;
+}
+
+/* Gaya untuk profil dropdown */
+/* Styling untuk dropdown dan ikon */
+.profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown button.dropbtn {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    border: 0px solid;
+}
+
+.dropdown button.dropbtn i {
+    font-size: 40px; /* Sesuaikan ukuran ikon sesuai kebutuhan */
+    color: #fff; /* Warna ikon */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 40px; /* Sesuaikan dengan posisi yang diinginkan */
+    right: 0; /* Sesuaikan dengan posisi yang diinginkan */
+}
+
+.menu .profile-menu .dropdown .dropbtn:hover{
+    background-color: transparent;
+}
+
+.menu .profile-menu .dropdown .dropdown-content div{
+    display: flex;
+    padding-left: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.menu .profile-menu .dropdown .dropdown-content div:hover{
+    background-color: #ccc;
+}
+
+.menu .profile-menu .dropdown .dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+/* header, judul */
+.header .judul{
+    padding: 60px 0px 240px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.header .judul h1{
+    font-size: 115px;
+    color: #fff;
+    text-align: center;
+}
+
+.header .judul p{
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+}
+
+/* white-box */
+/* white-box */
+.container-2{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 230px;
+    }
+    
+    .container-2 .white-box{
+    width: 1000px;
+    height: auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .container-2 .white-box .above{
+    padding: 30px 70px 30px 70px;
+    display: flex;
+    justify-content: space-between;
+    
+    }
+    
+    .container-2 .white-box .above .box{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+    background-color: transparent;
+    }
+
+    .container-2 .white-box .above .box .circle {
+        width: 50px;
+        height: 50px;
+        background-color: #ccc; /* Warna default untuk lingkaran */
+        color: #fff;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+    }
+    
+    .container-2 .white-box .above .box.active .circle {
+        background-color: #97415f; /* Warna merah untuk lingkaran aktif */
+    }
+    
+    
+    .container-2 .white-box .below{
+    padding: 40px 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 20px;
+    align-items: end;
+    }
+    
+    .container-2 .white-box .below input{
+    width: 860px;
+    height: 50px;
+    padding: 0px 20px 0px 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 0.1px solid rgb(211, 211, 211);
+    font-size: 14px;
+    margin-top: 10px;
+    }
+    
+    .container-2 .white-box .below .box-complaint textarea{
+    width: 860px;
+    height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 0.1px solid rgb(211, 211, 211);
+    font-size: 14px;
+    }
+    
+    .container-2 .white-box .button{
+    display: flex;
+    gap: 10px;
+    }
+    
+    .container-2 .white-box button{
+    padding: 20px 40px;
+    border: 0px solid;
+    border-radius: 8px;
+    font-size: 18px;
+    background-color: #97415f;
+    color: #fff;
+    cursor: pointer;
+    }
+
+    .container-2 .white-box .button button {
+        padding: 15px 40px; /* Mengurangi padding agar tombol lebih proporsional */
+    }
+    
+    .container-2 .white-box .below .box textarea {
+        width: 100%; /* Menyesuaikan lebar textarea dengan kontainer */
+        min-width: 860px; /* Lebar minimum textarea */
+        height: 200px; /* Menyesuaikan tinggi textarea */
+        padding: 10px; /* Padding internal */
+        box-sizing: border-box; /* Padding tidak menambah lebar total */
+        border-radius: 8px; /* Sudut bulat */
+        border: 1px solid rgb(211, 211, 211); /* Warna border */
+        font-size: 14px; /* Ukuran font */
+        margin-top: 10px; /* Jarak atas dari elemen lain */
+    }
+    
+    .error-message {
+    color: red;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+    }
+
+/* modal */
+/* tambahkan gaya khusus jika diperlukan */
+/* CSS untuk styling modal */
+.modal {
+    display: none; /* Sembunyikan modal secara default */
+    position: fixed; /* Tetapkan posisi modal */
+    z-index: 1; /* Tingkatkan indeks tumpukan untuk modal */
+    left: 0;
+    top: 0;
+    width: 100%; /* Lebar 100% */
+    height: 100%; /* Tinggi 100% */
+    overflow: auto; /* Aktifkan scrolling jika konten lebih besar dari modal */
+    background-color: rgb(0,0,0); /* Warna latar belakang */
+    background-color: rgba(0,0,0,0.4); /* Warna latar belakang dengan transparansi */
+  }
+  
+  /* Konten dalam modal */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Atur margin agar modal muncul di tengah layar */
+    padding: 20px;
+    border: 0px solid #888;
+    width: 80%; /* Lebar konten modal */
+    border-radius: 10px;
+  }
+  
+  /* Tombol untuk menutup modal */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .modal-content form input{
+    border-radius: 5px;
+  }
+
+  .modal-content form button{
+    background-color: #632E40;
+    border-radius: 5px;
+  }
+  
+  /* Animasi untuk tampilan modal */
+  .animate {
+    animation: zoom 0.6s;
+  }
+  
+  @keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+  }
+
+
+  
+
+/* about-us */
+.about-us{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 0px 100px 0px;
+    gap: 20px;
+}
+
+.about-us .box-besar{
+    margin-top: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.about-us .box-besar .box{
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #632e4034;
+    transition: background 0.3s, transform 0.5s, box-shadow 0.3s;
+    font-size: 18px;
+}
+
+.about-us .box-besar .box:hover{
+    background: linear-gradient(to bottom, #ee739e, #632E40);
+    box-shadow: 0px 0px 50px rgba(238, 115, 158, 0.5);
+    color: #fff;
+    transform: translateY(-15px);
+    border: none;
+}
+
+.about-us .box-besar .box p{
+    font-size: 18px;
+}
+
+/* government */
+.government{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    padding: 80px 0px 80px 0px;
+}
+
+.government img{
+    width: 380px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 30px;
+    border: 0px solid;
+    height: 380px;
+}
+
+.government img:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 50px rgba(238, 115, 158, 0.5);
+}
+
+.government .text{
+    padding: 60px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 700px;
+}
+
+.government .text #p{
+    font-size: 18px;
+    text-align: justify;
+}
+
+.government button{
+    width: 120px;
+    height: 38px;
+    border-radius: 6px;
+    border: 0px solid;
+    background-color: #763249;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.government button:hover {
+    background-color: #632E40;
+    box-shadow: 0px 0px 50px rgba(238, 115, 158, 0.5);
+}
+
+.government button a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/* statistik */
+.statistik{
+    padding: 40px 80px 40px 80px;
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(to bottom, #ee739e, #632E40);
+}
+
+.statistik .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+}
+
+/* about-tim */
+
+.about-tim{
+    padding: 80px 100px 80px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.about-tim .text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-tim .text p{
+    width: 350px;
+}
+
+.about-tim .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-tim .container .box{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.about-tim .container .box img{
+    width: 320px;
+    border-radius: 20px;
+    transition: transform 0.3s, box-shador 0.3s;
+}
+
+.about-tim .container .box img:hover{
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 50px rgba(238, 115, 158, 0.5);
+}
+
+/* video */
+.video{
+    padding: 80px 80px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.video p{
+    font-size: 18px;
+}
+
+video{
+    width: 800px;
+    border-radius: 18px;
+    border: 0px solid;
+    transition: box-shadow 0.3s;
+}
+
+video:hover{
+    box-shadow: 0px 0px 50px rgba(238, 115, 158, 0.5);
+}
+
+/* faq */
+.wrapper{
+    padding: 80px 100px 80px 100px;
+}
+
+.wrapper .text{
+    text-align: center;
+    margin: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.accordion{
+    background-color: white;
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 2rem 2rem;
+    border: none;
+    outline: none;
+    transition: 5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    transition: box-shadow 0.3s;
+}
+
+.accordion i{
+    font-size: 1.6rem;
+}
+
+.active{
+    background-color: #fff4f8;
+}
+
+.accordion:hover{
+    box-shadow: 0px 0px 50px rgba(238, 115, 158, 0.5);
+}
+.pannel{
+    padding: 0 2rem 2.5rem 2rem;
+    background-color: white;
+    overflow: hidden;
+    background-color: #fff4f8;
+    display: none;
+}
+
+
+
+.pannel p{
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    text-align: left;
+    width: 1100px;
+}
+
+.faq{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+}
+
+.faq.active{
+    border: none;
+}
+
+/* artikel */
+.artikel{
+    padding: 40px 100px 40px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.artikel .text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.artikel .container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.artikel .container .box{
+    padding: 30px 30px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    border: 0px solid;
+    transition: transform 0.5s, border 0.3s, box-shadow 0.3s;
+}
+
+.artikel .container .box:hover{
+    box-shadow: 0px 0px 50px rgba(238, 115, 158, 0.5);
+    transform: translateY(-20px);
+    border: none;
+}
+
+.artikel .container .box img{
+    width: 300px;
+}
+
+.artikel .container .box span a{
+    text-decoration: none;
+    font-style: italic;
+}
+
+/* footer */
+.footer{
+    background: linear-gradient(to bottom, #ee739e, #632E40); background-color: #ee739e;
+    padding: 80px 130px 80px 130px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.footer .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo, .footer-layanan, .footer-kontak, .footer-tautan{
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-logo .images{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-kontak .box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo img{
+    width: 50px;
+}
+
+.footer-tautan{
+    width: auto;
+}
+
+.footer-tautan a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.profile .profile-image {
+    width: 40px; /* Sesuaikan ukuran gambar profil */
+    height: 40px; /* Sesuaikan ukuran gambar profil */
+    border-radius: 50%; /* Membuat gambar profil bulat */
+    margin-right: 10px; /* Margin untuk penataan */
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+

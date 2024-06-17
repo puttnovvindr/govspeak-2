@@ -1,0 +1,350 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFAFA;
+}
+
+/* Header and Navbar */
+.header {
+    background: linear-gradient(to bottom, #ee739e, #632E40);
+    padding: 40px 100px 80px 100px;
+}
+
+.header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.header .navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 22px;
+}
+
+.header .navbar .menu {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.header .navbar .menu a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+}
+
+.header .navbar .menu a:not(button)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.header .navbar .menu a:not(button):hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.header .navbar .menu .signup-button a{
+    padding: 10px 30px;
+    border-radius: 6px;
+    border: 0px solid;
+    font-weight: bold;
+    background-color: #763249;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.header .navbar .menu .signup-button:hover {
+    background-color: #632E40;
+    box-shadow: 0px 0px 50px rgba(238, 115, 158, 0.5);
+}
+
+.header .navbar button:hover {
+    background-color: #632E40;
+    box-shadow: 0 0 50px rgba(238, 115, 158, 0.5);
+}
+
+/* Dropdown and Profile Menu */
+.profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown button.dropbtn {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown button.dropbtn i {
+    font-size: 40px;
+    color: #fff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    top: 40px;
+    right: 0;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content div {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 5px;
+}
+
+.dropdown-content div:hover {
+    background-color: #ccc;
+}
+
+.dropdown-content a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+.modal-content input[type=text],
+.modal-content input[type=email],
+.modal-content input[type=password],
+.modal-content textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.modal-content button {
+    background-color: #632E40;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal-content button:hover {
+    opacity: 0.8;
+}
+
+/* Forum Box */
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 60px;
+}
+
+.cre-state {
+    width: 900px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.cre-state div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cre-state div textarea,
+.cre-state div input {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.cre-state button {
+    padding: 14px 60px;
+    border-radius: 8px;
+    border: 0;
+    background-color: #632E40;
+    color: #fff;
+    cursor: pointer;
+}
+
+.display-questions {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.display-questions .question {
+    width: 900px;
+    position: relative; /* Added for absolute positioning */
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.display-questions .question h4 {
+    margin-bottom: 10px;
+}
+
+.display-questions .question p {
+    margin-bottom: 15px;
+}
+
+.display-questions .actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.display-questions .actions button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #763249;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.display-questions .actions button:hover {
+    background-color: #632E40;
+}
+
+.display-questions .comments {
+    padding: 10px 0 0 20px;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.display-questions .comments p {
+    margin-bottom: 5px;
+}
+
+.display-questions .actions {
+    display: flex;
+    flex-direction: column; /* Mengatur agar item berada dalam kolom */
+    gap: 10px;
+    align-items: flex-start; /* Rata kiri */
+    justify-content: flex-end; /* Memindahkan tombol delete dan comment ke kanan */
+}
+
+.display-questions .actions button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #763249;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.display-questions .comments {
+    padding: 10px 0 0 20px;
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+.comment-form {
+    margin-top: 10px;
+    width: 820px;
+    display: flex;
+    flex-direction: column; /* Mengatur agar item berada dalam kolom */
+    align-items: flex-start; /* Rata kiri */
+}
+
+.comment-form textarea {
+    width: 100%;
+    height: 100%; /* Lebar textarea */
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #FFE0E6;
+    box-sizing: border-box;
+    resize: vertical;
+    align-self: flex-start; /* Rata kiri */
+}
+
+.comment-form button {
+    width: 160px; /* Lebar tombol submit */
+    padding: 14px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 0;
+    background-color: #632E40;
+    color: #fff;
+    cursor: pointer;
+}
+
